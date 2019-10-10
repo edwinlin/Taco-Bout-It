@@ -1,17 +1,23 @@
 const path = require('path')
+console.log("HELLO", process.env.NODE_ENV)
 
 module.exports = {
   entry: "./src/index.js",
-  mode: "development",
+  mode: process.env.NODE_ENV,
   output: {
-      filename: "./main.js"
+      filename: "./main.js",
+      path: path.resolve(__dirname,"build"),
+
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    publicPath: "/build/",
     compress: true,
     port: 8080,
-    watchContentBase: true,
-    progress: true
+    // watchContentBase: true,
+    progress: true,
+    // proxy: {
+    //   '/api': 'http://localhost:3000'
+    // },
   },
   module: {
     rules: [
