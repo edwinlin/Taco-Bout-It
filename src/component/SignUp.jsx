@@ -1,47 +1,21 @@
 import React from 'react'
-// const User = require('../models/UserModel.js')
-// import User from '.../models/UserModel.js'
 class SignUp extends React.Component {
   constructor(props){
     super(props)
-    this.state = {
-      name: "",
-      pass: ""
-    }
-    this.handleSignUpSubmit = this.handleSignUpSubmit.bind(this)
-    this.handleNameInput = this.handleNameInput.bind(this)
-    this.handlePassInput = this.handlePassInput.bind(this)
-  }
-  handleSignUpSubmit(event){
-    event.preventDefault()
-    if(this.state.name !== ""){
-      fetch('http://localhost:3000/add', {
-        method: 'post',
-        body: JSON.stringify({ name:this.state.name, password: this.state.pass}),
-        headers: { 'Content-type': 'application/json' }
-      })
-      .then(res=>res.json())
-      .then(data=>console.log("received back",data))
-    }else{
-      alert("No Tacos For You: Name Required")
-    }
-    this.setState({name:"", pass:""})
-  }
-  handleNameInput(event){
-    this.setState({name:event.target.value})
-  }
-  handlePassInput(event){
-    this.setState({pass:event.target.value})
+    // this.state = {
+    //   name: "",
+    //   pass: ""
+    // }
   }
   render(){
     return <div>
       Sign Up
-      <form onSubmit={this.handleSignUpSubmit}>
+      <form onSubmit={this.props.handleSignUpSubmit}>
         <label>
           Name:
-          <input type="text" name="name" value={this.state.name} onChange={this.handleNameInput} />
+          <input type="text" name="name" value={this.props.state.signName} onChange={this.props.handleNameInput} />
           Password:
-          <input type="text" name="name" value={this.state.pass} onChange={this.handlePassInput} />
+          <input type="text" name="password" value={this.props.state.signPass} onChange={this.props.handlePassInput} />
         </label>
         <input type="submit" value="Submit" />
       </form>

@@ -1,0 +1,30 @@
+#welcome {
+  font-size: 100px;
+  color: yellow;
+  background: blue;
+  text-align: center;
+}
+#question {
+  font-size: 50px;
+  color: purple;
+}
+#root {
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+#second_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#checkboxes {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  max-height: 310px;
+  justify-content: space-between;
+}
+#checkboxes>*{
+  margin: 0 auto;
+}

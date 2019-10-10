@@ -1,6 +1,8 @@
 import React from 'react'
-
-const Preferences = () => {
-  return <div>Preferences</div>
+import CheckboxContainer from './CheckboxContainer.jsx'
+const Preferences = (props) => {
+  return <div>
+    <CheckboxContainer state={props.state}/>
+  </div>
 }
 export default Preferences

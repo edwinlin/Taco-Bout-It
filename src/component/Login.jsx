@@ -10,14 +10,14 @@ const ColoredLine = ({ color }) => (
   />
 );
 
-const Login = () => {
+const Login = (props) => {
   return <div>
-    <form>
+    <form onSubmit={props.handleLoginSubmit}>
       <label>
         Login:
-        <input type="text" name="name" />
+        <input type="text" name="name" value={props.state.logName} onChange={props.handleNameInput} />
         Password:
-        <input type="text" name="name" />
+        <input type="text" name="password" value={props.state.logPass} onChange={props.handlePassInput} />
       </label>
       <input type="submit" value="Submit" />
     </form>
