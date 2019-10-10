@@ -15,12 +15,14 @@ class App extends Component {
       signUp: false,
     }
   }
+  
+
   render() {
     if(this.state.signUp){
       return <div>
       <LoginComponent />
       <ColoredLine color="blue"/>
-      <SignUpComponent />
+      <SignUpComponent/>
     </div> 
     }
     if(this.state.isLoggedIn){

@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/edwinlin/Taco-Bout-It#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "mongoose": "^5.7.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
